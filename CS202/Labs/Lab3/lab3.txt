@@ -1,0 +1,92 @@
+These are the lab notes for lab 3. Will include
+answers and notes on it.
+Lab Manual pg 92
+
+DYNAMIC BINDING
+
+Background summary:
+    Use dynamic binding when theres a self similar public interface between
+    derived classes of a same base class. Base class doesn't need to be the
+    most indirect base class, just a class where it makes sense to place the
+    virtual functions. 
+
+    Base class is where the virtual function will be placed. 
+
+    Dynamic Binding rules:
+    1. Same function names, same arguments, same return types throughout the
+        hierarchy.
+    2. Base class has the keyword virtual in front of the prototype for the 
+        functions.
+    3. Function is called via a base class pointer or reference, but assigned
+        to point to the desired derived class object.
+    4. Dynamic binding does not apply to constructors.
+
+    Note the destructor in the base needs to be virtual.
+
+    Try to use pure virtual functions. Pure virtual functions have no body and
+    act as a link between the base class virtual function and the derived class
+    function. Pure virtual functions look like this in the prototype:
+        void display() = 0;
+    
+    An abstract base class needs to have at least one pure virtual function. These
+    abstract base classes should not be explicitly created in the client program
+    and used as a base pointer to create the derived objects at runtime. Abstract 
+    base classes are allowed to have data members and member functions.
+
+
+    RTTI (Run Time Type Identification) Syntax
+    -   RTTI is necessary when we need to determine what kind of data to allocate. 
+        Use dynamic_cast to determine what kind opf data we are pointing at
+        (within a particular path of hierarchy)
+
+        Syntax:
+            derived * ptr = dynamic_cast<derived *>(a_base_class_pointer);
+
+        
+Prelab:
+1. virtual void play();
+
+2. void play();
+
+3. Making device pointer point to xbox_one: 
+    device * ptr;
+    ptr = new xbox_one;
+    ptr->play();
+
+4. Dynamically Allocated Array of different gaming systems:
+    device ** array = new device * [3];
+    array[0] = new xbox_one;
+    array[1] = new playstation4;
+    array[2] = new switch;
+
+5. Calling play function for each gaming system.
+    for(int i = 0; i < 3; ++i) 
+        array[i]->play();
+        //Will play all of the gaming systems through the loop.
+
+6. Pure virtual function syntax:
+    void display() = 0;
+
+7. Syntax for upcasting:
+    array[0]->play();
+    //or
+    ptr->play();
+
+8. Syntax for downcasting: FIND DEFINITON
+
+9. Benefit of abstract base class:
+    ABC allows you to have a hub of the virtual functions so that
+    you can have the ABC pointer point to different derived objects
+    and call those functions from there.
+
+10. Yes an abstract base class can have data members.
+
+11. We should not create objects of an abstract base class.
+
+12. All of the methods in an ABC do not need to be pure virtual
+functions. We need atleast one pure virtual function in the ABC. 
+
+13. Classes for store management program.
+    - 
+
+

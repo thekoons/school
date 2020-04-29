@@ -1,0 +1,14 @@
+Going over operator overloading
+
+* Examing code below:
+    cin >> variable;
+    
+    - The ">>" operator is actually a bit shifter operator
+        when not used with the cin object.
+    - Using operator overloading, you can change the bit shifter
+        into the cin extraction operator when used with the cin
+        object.
+
+* Basic idea is to make the operator function a wrapper function 
+    around a premade function inside of the class. 
+

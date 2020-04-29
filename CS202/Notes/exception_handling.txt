@@ -1,0 +1,58 @@
+Try blocks and catch blocks
+
+1. Wrap try block around a function.
+2. Inside of the function, use the throw function  
+    to throw the data type that failed.
+3. On the stack where the try block is at, have the
+    catch block right after the try block.
+4. Catches will have a data type as the argument.
+
+        int main()
+        {
+            // Try thinking of this as a generic class.
+            list object;
+
+            // Try wrapped around function.
+            try {
+                object.funct();
+            }
+
+            // Catch function for when a program throws a 
+            // data type. The "..." in the argument list means
+            // generic throw value (anything).
+            catch(...) {
+                cout << "Error has occurred\n";
+            }
+
+            return 0;
+        }
+
+
+
+
+* There is also a way to make a structure that is a generic
+    catch value that has a strict name so that it is easier
+    to know what the catch statement should do.
+
+        // This could be put into an error.h file 
+        struct BAD_EXCEPTION {
+            int bad_int;
+        }
+
+
+
+
+* Then add put the struct name as an argument in the catch.
+
+        try {
+            object.funct();
+        }
+        catch(BAD_EXCEPTION) {
+            cout << "Bad integer value\n";
+        }
+
+
+* Basically allow you to safely return from a stack frame 
+    and go to a new function. Good for debugging too.
+
+

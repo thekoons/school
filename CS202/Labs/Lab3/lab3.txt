@@ -87,6 +87,27 @@ Prelab:
 functions. We need atleast one pure virtual function in the ABC. 
 
 13. Classes for store management program.
-    - 
+    
+    Classes I already have:
+        - Name, Person, Employee, Hourly, Salaried, full time, part time.
 
 
+Level 1:
+    a. All employees array is employee base pointer
+    b. array[n] = new employee;
+    c. Depending on which derived employee class is in that index.
+
+
+
+Skipped all before because information was redundant
+
+Step 7:
+    a. data members are name group, int num_emps, employee ** group.
+    b. default for name, 0, null.
+    c. initialization lists need to be implemented for the
+    public salaried employee part.
+    d. RTTI will be needed whenever we are adding a new group member.
+    This will also be necessary whenever we are figuring out which functions
+    of a certain type to call.
+
+    

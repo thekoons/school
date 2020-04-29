@@ -1,0 +1,13 @@
+File: design1.txt
+Author: Kunio Comey
+Date: 4/7/20
+Description: This is a text document for the OOP design writeup #1.
+
+Nouns: Lecture Slides, Email, Assignments
+
+Assignment should have the notion of a due date or a schedule. 
+Email will request interaction with another object.
+
+
+Major Design Considerations: 
+        

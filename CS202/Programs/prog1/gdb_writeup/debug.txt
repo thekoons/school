@@ -1,0 +1,58 @@
+File: debug.txt
+Author: Kunio Comey
+Date: 4/16/20
+
+For testing the Clear message function:
+
+TESTING DISPLAY FUNCTION
+From: 
+Program received signal SIGSEGV, Segmentation fault.
+__strlen_sse2 () at ../sysdeps/x86_64/multiarch/../strlen.S:120
+120     ../sysdeps/x86_64/multiarch/../strlen.S: No such file or directory.
+
+    NOTE: Error occurs at display function
+
+
+TESTING THE MESSAGE LIST CLASS
+Program received signal SIGSEGV, Segmentation fault.
+__GI___libc_free (mem=0xe881) at malloc.c:3103
+3103    malloc.c: No such file or directory.
+(gdb) bt
+#0  __GI___libc_free (mem=0xe881) at malloc.c:3103
+#1  0x000055555555550b in str::~str (this=0x55555576a788, __in_chrg=<optimized out>) at str.cpp:33
+#2  0x0000555555555f84 in message::~message (this=0x55555576a770, __in_chrg=<optimized out>) at title.h:42
+#3  0x0000555555555c6f in m_node::~m_node (this=0x55555576a770, __in_chrg=<optimized out>) at title.cpp:123
+#4  0x0000555555555c2a in m_node::~m_node (this=0x55555576a710, __in_chrg=<optimized out>) at title.cpp:126
+#5  0x0000555555555d65 in m_list::~m_list (this=0x7fffffffe930, __in_chrg=<optimized out>) at title.cpp:161
+#6  0x0000555555555380 in menu () at main.cpp:26
+#7  0x00005555555552e6 in main () at main.cpp:19
+(gdb) bt
+#0  __GI___libc_free (mem=0xe881) at malloc.c:3103
+#1  0x000055555555550b in str::~str (this=0x55555576a788, __in_chrg=<optimized out>) at str.cpp:33
+#2  0x0000555555555f84 in message::~message (this=0x55555576a770, __in_chrg=<optimized out>) at title.h:42
+#3  0x0000555555555c6f in m_node::~m_node (this=0x55555576a770, __in_chrg=<optimized out>) at title.cpp:123
+#4  0x0000555555555c2a in m_node::~m_node (this=0x55555576a710, __in_chrg=<optimized out>) at title.cpp:126
+#5  0x0000555555555d65 in m_list::~m_list (this=0x7fffffffe930, __in_chrg=<optimized out>) at title.cpp:161
+#6  0x0000555555555380 in menu () at main.cpp:26
+#7  0x00005555555552e6 in main () at main.cpp:19
+
+
+TESTING THE SCHEDULE CLASS
+Now creating event...
+
+
+Program received signal SIGSEGV, Segmentation fault.
+__GI___libc_free (mem=0x89485ed18949ed31) at malloc.c:3103
+3103    malloc.c: No such file or directory.
+(gdb) bt
+#0  __GI___libc_free (mem=0x89485ed18949ed31) at malloc.c:3103
+#1  0x00005555555563e2 in str::clear (this=0x555555554e00 <_start>) at str.cpp:63
+#2  0x000055555555629c in str::read (this=0x555555554e00 <_start>) at str.cpp:43
+#3  0x000055555555664c in title::read_title (this=0x555555554e00 <_start>) at title.cpp:38
+#4  0x0000555555555e37 in schedule::insert (this=0x7fffffffe940) at schedule.cpp:182
+#5  0x00005555555560a4 in schedule::menu (this=0x7fffffffe940) at schedule.cpp:248
+#6  0x00005555555556c1 in main () at main.cpp:30
+(gdb) quit
+A debugging session is active.
+
+

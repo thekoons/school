@@ -1,0 +1,21 @@
+Group Activity 1
+    a. What classes make sense
+        Name, Person, Employee
+                        -Salaried -Hourly
+                        -Manager
+
+    b. Is a all the way down, but manager will have a has a for employees for all the employees they manage.
+        Manager > Data structure of employees
+
+    c. The manager will need wrapper functions to access the data structure. 
+    
+    d. Data members:
+        Name > char array
+        Person > ...
+        easy peazy
+
+    2.a. All need constructors.
+
+    3.a. Changing name, hiring, firing, raising.
+        
+    4. 

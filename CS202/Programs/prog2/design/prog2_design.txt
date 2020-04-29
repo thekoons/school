@@ -1,0 +1,27 @@
+Kunio Comey
+CS202
+Program 2
+Design 2
+
+Basic Goal: Create three objects
+
+Hierarchy:
+
+0. Base: Str
+    Description: This will be used to help with dealing with character arrays.
+
+1. Base: Activity
+    Description: This will be an abstract base class that will hold three
+        classes. 
+        Functions: read(), display(), clear();
+
+    1. Derived: Hiking
+        Description: This is one of the activities derived from activity.
+
+    1. Derived: Dining
+        Description: This is another activity derived from activity. 
+
+    1. Derived: Zoo
+        Description: This is the last activity derived from activity.
+
+

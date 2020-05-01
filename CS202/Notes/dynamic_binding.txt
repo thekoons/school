@@ -1,0 +1,68 @@
+Binding Definition:
+a) function_a(); //Represents function call
+
+    //Represents function definition. 
+    void function_a()
+    {
+        cout << "hello\n";
+    }
+
+    //Note each function definition will be connected to the function call. This is
+    //binding.
+
+If you have a hierarchy:
+
+//Figuring out which function to call here based on what the function is pointing
+//to is dynamic binding.
+1. Shape: function->draw();
+    2. Circle: function->draw();
+    2. Triangle: function->draw();
+
+Dynamic Cast:
+    Used for checking what the type we are pointing to (RTTI). Normally
+    we would know what type of object we are working with the method of 
+    coding we have been using. Though dynamic cast will allow us to perform
+    different types of code based on what kind of object we have passed into
+    a function.
+
+    For example we have a base class pointer (we'll use the hierarchy above)
+
+    class shape
+    {
+        public:
+            virtual int draw()=0;
+    }
+
+    class circle : public shape
+    {
+        public:
+            int draw();
+    }
+
+    class triangle: public shape 
+    {
+        public:
+            int draw();
+    }
+
+    int main()
+    {
+        shape ** ptr = new shape * [2];
+        ptr[0] = new circle;
+        ptr[1] = new triangle;
+
+        //Draw circle.
+        ptr[0]->draw();
+        //Draw triangle.
+        ptr[1]->draw();
+        //This is dynamic binding using the virtual draw function from
+        //shape's virtual draw. From there you can connect the virtual
+        //function to the circle's draw function or the triangle's draw
+        //function.
+
+        //If we needed to make copies of this list, we would need to do some
+        //RTTI to double check what object is at a given element in the array.
+    }
+
+    For more notes on this, check out:
+    kunio@cs202lab.cs.pdx.edu : ~/CS202/Practice/dynamic_binding/

@@ -21,9 +21,9 @@ class data
 
         //Read, compare, and display functions to call the
         //virtual functions on ptr.
-        void read();
-        void compare(const data &);
-        void display();
+        void read(void);
+        int compare(const data &) const;
+        void display(void) const;
 
     protected:
         info * ptr;
@@ -45,8 +45,8 @@ class node : public data
         void set_right(node *);
 
         //Getters
-        node *& get_left();
-        node *& get_right();
+        node *& get_left(void);
+        node *& get_right(void);
 
     private:
         node * left;
@@ -63,12 +63,11 @@ class tree
         tree(const tree &);
         ~tree(void);
 
-        /*
+        //Insert, search, display, and remove function.
         insert();
-        search(char *);
+        search(const char *);
         display();
-        remove(char *);
-        */
+        remove(const char *);
 
     private:
         node * root;

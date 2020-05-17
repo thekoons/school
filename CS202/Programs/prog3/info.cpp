@@ -36,6 +36,13 @@ void info::display_info()
     cout << "\nPriority: " << priority;
 }
 
+//Compare function to determine if the current class's name
+//has a greater string value or a less string value.
+int info::compare(const info & to_cmp) const
+{
+    return name.compare(to_cmp.name);
+}
+
 
 
 

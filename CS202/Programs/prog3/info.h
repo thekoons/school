@@ -28,6 +28,9 @@ class info
         //Read and prompt function and display function.
         void read_info();
         void display_info();
+
+        //Compare function to compare the names.
+        int compare(const info & to_cmp) const;
         
         //Virtual display and read function that will connect to 
         //the derived classes.

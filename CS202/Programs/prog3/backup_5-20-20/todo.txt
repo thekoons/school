@@ -1,0 +1,6 @@
+5:31 AM 5/17/20:
+    SCHOOL
+    - Finish implementing the data class.
+    - Get a working data structure with menus up.
+    - Implement Operator Overloading.
+%

@@ -30,7 +30,33 @@ class info
         void display_info();
 
         //Compare function to compare the names.
-        int compare(const info & to_cmp) const;
+        int compare(const info & to_cmp);
+        int compare(const str & to_cmp);
+
+        //Info overloaded operators.
+
+        //Virtual = operator so that we can call it from the client using
+        //upcasting.
+        virtual info & operator=(const info &);
+
+        //Plus equals operator overload.
+        info & operator+=(const info &);
+
+        //Plus operator will act like the += operator. Can't do compound
+        //+ statements due to the nature of dynamic binding.
+        info & operator+(const info &);
+       
+        //Overloading the insertion and extraction operators.
+        friend std::ostream & operator << (std::ostream &, const info &);
+        friend std::istream & operator >> (std::istream &, info &);
+        
+        //Overloading the relational operators.
+        bool friend operator < (const info &, const info &);
+        bool friend operator <= (const info &, const info &);
+        bool friend operator > (const info &, const info &);
+        bool friend operator >= (const info &, const info &);
+        bool friend operator == (const info &, const info &);
+        bool friend operator != (const info &, const info &);
         
         //Virtual display and read function that will connect to 
         //the derived classes.
@@ -56,6 +82,8 @@ class zoom_id : public info
         void read();
         void display();
 
+        zoom_id & operator=(const zoom_id &);
+
     protected:
         str id;
 };
@@ -69,14 +97,15 @@ class website : public info
         //Constructors
         website(void);
         website(const website &);
-
         ~website(void);
 
         void read();
         void display();
 
+        website & operator=(const website &);
+
     protected:
-        str url;
+        str url; 
 };
 
 
@@ -90,11 +119,12 @@ class app : public info
         //Constructors
         app(void);
         app(const app &);
-
         ~app(void);
 
         void read();
         void display();
+
+        app & operator=(const app &);
 
     protected:
         str link;

@@ -1,0 +1,76 @@
+kunio@ada:~/CS202/spring_term/prog3$ !g
+g++ *.cpp -g -Wall
+info.cpp: In member function ‘int info::compare(const info&) const’:
+info.cpp:43:36: error: passing ‘const str’ as ‘this’ argument discards qualifiers [-fpermissive]
+     return name.compare(to_cmp.name);
+                                    ^
+In file included from info.h:10:0,
+                 from info.cpp:9:
+str.h:57:13: note:   in call to ‘int str::compare(const str&)’
+         int compare(const str & cmp);
+             ^~~~~~~
+table.cpp: In copy constructor ‘data::data(const data&)’:
+table.cpp:23:53: error: cannot dynamic_cast ‘* source’ (of type ‘class info’) to type ‘class zoom_id*’ (source is not a pointer)
+     zoom_id * test = dynamic_cast<zoom_id *>(*source);
+                                                     ^
+table.cpp:24:39: error: no matching function for call to ‘zoom_id::zoom_id(info&)’
+     if(test) ptr = new zoom_id(*source);
+                                       ^
+In file included from table.h:6:0,
+                 from table.cpp:6:
+info.h:52:9: note: candidate: zoom_id::zoom_id(const zoom_id&)
+         zoom_id(const zoom_id &);
+         ^~~~~~~
+info.h:52:9: note:   no known conversion for argument 1 from ‘info’ to ‘const zoom_id&’
+info.h:51:9: note: candidate: zoom_id::zoom_id()
+         zoom_id(void);
+         ^~~~~~~
+info.h:51:9: note:   candidate expects 0 arguments, 1 provided
+table.cpp:27:57: error: cannot dynamic_cast ‘* source’ (of type ‘class info’) to type ‘class website*’ (source is not a pointer)
+         website * test = dynamic_cast<website *>(*source);
+                                                         ^
+table.cpp:28:43: error: no matching function for call to ‘website::website(info&)’
+         if(test) ptr = new website(*source);
+                                           ^
+In file included from table.h:6:0,
+                 from table.cpp:6:
+info.h:71:9: note: candidate: website::website(const website&)
+         website(const website &);
+         ^~~~~~~
+info.h:71:9: note:   no known conversion for argument 1 from ‘info’ to ‘const website&’
+info.h:70:9: note: candidate: website::website()
+         website(void);
+         ^~~~~~~
+info.h:70:9: note:   candidate expects 0 arguments, 1 provided
+table.cpp:31:53: error: cannot dynamic_cast ‘* source’ (of type ‘class info’) to type ‘class app*’ (source is not a pointer)
+             app * test = dynamic_cast<app *>(*source);
+                                                     ^
+table.cpp:32:43: error: no matching function for call to ‘app::app(info&)’
+             if(test) ptr = new app(*source);
+                                           ^
+In file included from table.h:6:0,
+                 from table.cpp:6:
+info.h:92:9: note: candidate: app::app(const app&)
+         app(const app &);
+         ^~~
+info.h:92:9: note:   no known conversion for argument 1 from ‘info’ to ‘const app&’
+info.h:91:9: note: candidate: app::app()
+         app(void);
+         ^~~
+info.h:91:9: note:   candidate expects 0 arguments, 1 provided
+table.cpp: In member function ‘void data::read()’:
+table.cpp:88:22: error: ‘application’ does not name a type
+            ptr = new application;
+                      ^~~~~~~~~~~
+table.cpp:56:10: warning: unused variable ‘again’ [-Wunused-variable]
+     char again = '\0';
+          ^~~~~
+table.cpp: In member function ‘int data::compare(const data&) const’:
+table.cpp:107:29: error: base operand of ‘->’ has non-pointer type ‘const data’
+     if(!this->ptr || !to_cmp->ptr)
+                             ^~
+table.cpp:115:31: error: base operand of ‘->’ has non-pointer type ‘const data’
+     return ptr->compare(to_cmp->ptr);
+                               ^~
+kunio@ada:~/CS202/spring_term/prog3$ exit
+exit

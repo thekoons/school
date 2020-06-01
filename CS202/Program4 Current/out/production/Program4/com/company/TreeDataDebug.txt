@@ -1,0 +1,13 @@
+Functions implemented:
+    * Default constructor
+    * --- Helper initializer
+    * Copy Constructor
+    * --- Copy helper
+    * Constructor with List object as argument.
+    * Insertion for base cases (first node or match).
+    * Insert function that also reorders the lists in it.
+    *       //This needs to be edited so that it works with 3 data members rather than 2.
+    *
+
+    Insertion algorithm should first insert into a node and then afterwards deal with
+    checking if it is full and splitting it. We will also need a base pointer to it's parent.

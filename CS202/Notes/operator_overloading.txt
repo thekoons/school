@@ -12,3 +12,9 @@ Going over operator overloading
 * Basic idea is to make the operator function a wrapper function 
     around a premade function inside of the class. 
 
+Unary Operator:
+    - Only one argument passed in and the other argument would be
+    the object.
+
+    return_type operator+ (arg);
+    //
